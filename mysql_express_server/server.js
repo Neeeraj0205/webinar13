@@ -1,0 +1,10 @@
+const express = require ('express')
+const app = express()
+const personroute = require('./routes/data')
+app.use('/persondata',personroute) 
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.set('views',__dirname+ "/views")
+app.set("view engine" , "hbs")
+
+app.listen(4444)
